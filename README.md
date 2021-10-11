@@ -7,10 +7,10 @@ es pereferible que para abrir este proyecto se use Pycharm, ya que en dicho ento
 
 ## Prueba 1
 <p  align="center">
-   <img src=Resultado.PNG>
+   <img src=/Resultado.PNG>
 </p>
 
 ## Prueba 1
 <p  align="center">
-   <img src=prueba.PNG>
+   <img src=/prueba.PNG>
 </p>
