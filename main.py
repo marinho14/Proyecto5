@@ -18,7 +18,7 @@ def recibir():
     cont = 1
     while (True):
         try:
-            image_name = "image_" + str(cont) + ".jpg"
+            image_name = "image_" + str(cont) + ".jpeg"
             path_file = os.path.join(path, image_name)
             image = cv2.imread(path_file)
             image = cv2.resize(image, (900, 980))
@@ -140,7 +140,6 @@ if __name__ == '__main__':
     referencia = int(ref)-1
     factor = 10
 
-    I = np.identity(H_list[-1].shape[0])
     des = 2500
     h_traslacion = np.array([[1, 0, des], [0, 1, des], [0, 0, 1]], np.float64)
 
@@ -170,5 +169,5 @@ if __name__ == '__main__':
     for idx, img in enumerate(img_transform):
         prom = promedio_imagenes(prom, img)
 
-    cv2.imwrite("res3.png", prom)
+    cv2.imwrite("hola3.png", prom)
     cv2.waitKey(0)
