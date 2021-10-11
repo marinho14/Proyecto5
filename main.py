@@ -1,11 +1,12 @@
-# Se definen
+# Se definen las librerias necesarias
 import numpy as np
 import cv2
 import os
-import sys
 
-points = []
-H_list = []
+
+## Se definen algunas variables
+points = [] ## Los puntos
+H_list = [] ## La lista donde se guardaran las H
 concat = []
 flag = False
 
@@ -16,7 +17,7 @@ def recibir():
     cont = 1
     while (True):
         try:
-            image_name = str(cont) + ".jpg"
+            image_name = "image_" + str(cont) + ".jpg"
             path_file = os.path.join(path, image_name)
             image = cv2.imread(path_file)
             image = cv2.resize(image, (900, 980))
