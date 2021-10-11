@@ -1,4 +1,4 @@
-# This is a sample Python script.
+# Se definen
 import numpy as np
 import cv2
 import os
@@ -168,5 +168,5 @@ if __name__ == '__main__':
     for idx, img in enumerate(img_transform):
         prom = promedio_imagenes(prom, img)
 
-    cv2.imwrite("Resultado_2.png", prom)
-    #cv2.waitKey(0)
+    cv2.imwrite("res3.png", prom)
+    cv2.waitKey(0)
