@@ -1,3 +1,4 @@
+#Codigo realizado por Sebastian Marinho y Daniel Barandica, para la materia de Procesamiento de imagenes y video
 # Se definen las librerias necesarias
 import numpy as np
 import cv2
