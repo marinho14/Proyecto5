@@ -8,20 +8,20 @@ import os
 ## Se definen algunas variables
 points = [] ## Los puntos
 H_list = [] ## La lista donde se guardaran las H
-concat = []
+concat = [] ## Se difine donde se guardan las imagenes concatenadas
 flag = False
 
-
+## Se define la funcion para ingresar las imagenes
 def recibir():
     path = input("Ingrese la dirección de la carpeta donde se encuentras sus imagenes: ")
-    imagenes = []
+    imagenes = [] ## Se define la lista donde se guardaran las imagenes
     cont = 1
-    while (True):
+    while (True): ## Se define un while
         try:
-            image_name = "image_" + str(cont) + ".jpg"
+            image_name = "image_" + str(cont) + ".jpg"  ## Se lee la imagen
             path_file = os.path.join(path, image_name)
             image = cv2.imread(path_file)
-            image = cv2.resize(image, (900, 980))
+            image = cv2.resize(image, (900, 980))  ## Se hace un rezice debido al tamaño de las imagenes
             imagenes.append(image)
             cont += 1
         except:
@@ -29,7 +29,7 @@ def recibir():
     N = len(imagenes)
     return imagenes, N
 
-
+## Se define la funcion click para leer los clicks del mouse
 def click(event, x, y, flags, param):
     global flag
     if event == cv2.EVENT_LBUTTONDOWN:
@@ -37,7 +37,7 @@ def click(event, x, y, flags, param):
     elif event == cv2.EVENT_RBUTTONDOWN:
         flag = True
 
-
+##
 def Homography(image, image_2):
     global points, flag
     image_concat = cv2.hconcat([image, image_2])
@@ -139,9 +139,7 @@ if __name__ == '__main__':
 
     referencia = int(ref)-1
     factor = 10
-
-    I = np.identity(H_list[-1].shape[0])
-    des = 2500
+    des = 2000
     h_traslacion = np.array([[1, 0, des], [0, 1, des], [0, 0, 1]], np.float64)
 
     img_transform = []
